@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | Premium Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">Nova<span>.</span></div>
+
+    <nav>
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="course.html">My Courses</a>
+      <a href="profile.html">Profile</a>
+      <a href="admin.html">Admin</a>
+      <a href="customer-support.html">Support</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund-policy.html">Refund</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div>
+        <h2 id="username">Welcome</h2>
+        <p id="useremail"></p>
+      </div>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </header>
+
+    <!-- WELCOME CARD -->
+    <section class="welcome-card">
+      <h3>Welcome to your learning dashboard</h3>
+      <p>
+        Access your premium courses, track progress, and continue learning seamlessly.
+      </p>
+    </section>
+
+    <!-- STATS -->
+    <section class="section">
+      <h3 class="section-title">Your Stats</h3>
+      <div class="stats-grid" id="statsGrid">
+        <!-- Stats will be generated dynamically -->
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="section">
+      <h3 class="section-title">Your Courses</h3>
+      <div id="paymentBanner" class="payment-banner hidden"></div>
+      <div class="courses-grid" id="coursesGrid">
+        <!-- Course cards will be generated dynamically -->
+      </div>
+    </section>
+
+    <!-- ABOUT / VALUE -->
+    <section class="about-card">
+      <h3>Why this platform?</h3>
+      <p>
+        Structured, practical learning designed to build disciplined, risk-aware traders.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/auth-guard.js"></script>
+<script src="../assets/js/dashboard.js"></script>
+
+  <script src="../assets/js/cookie-consent.js"></script>
+</body>
+</html>

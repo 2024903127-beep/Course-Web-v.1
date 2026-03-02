@@ -1,0 +1,7 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="150" cy="120" r="80" fill="#6366f1"/>
+  <text x="150" y="130" text-anchor="middle" fill="white" font-family="Arial" font-size="48" font-weight="bold">RM</text>
+  <rect x="50" y="220" width="200" height="80" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="150" y="250" text-anchor="middle" fill="#1e293b" font-family="Arial" font-size="18" font-weight="bold">Rahul Mishra</text>
+  <text x="150" y="275" text-anchor="middle" fill="#64748b" font-family="Arial" font-size="14">Professional Trader & Mentor</text>
+</svg>

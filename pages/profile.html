@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile | Premium Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../assets/css/dashboard.css" />
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">Nova<span>.</span></div>
+
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="course.html">My Courses</a>
+      <a href="profile.html" class="active">Profile</a>
+      <a href="customer-support.html">Support</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund-policy.html">Refund</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div>
+        <h2>Profile</h2>
+        <p>Manage your account settings</p>
+      </div>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </header>
+
+    <!-- PROFILE CARD -->
+    <section class="profile-card">
+      <h3>Your Profile</h3>
+      <div class="profile-info">
+        <div class="info-item">
+          <label>Name:</label>
+          <span id="profileName"></span>
+        </div>
+        <div class="info-item">
+          <label>Email:</label>
+          <span id="profileEmail"></span>
+        </div>
+        <div class="info-item">
+          <label>Member Since:</label>
+          <span id="memberSince"></span>
+        </div>
+      </div>
+      <button class="btn-primary" id="editProfileBtn">Edit Profile</button>
+    </section>
+
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/auth-guard.js"></script>
+<script src="../assets/js/profile.js"></script>
+
+  <script src="../assets/js/cookie-consent.js"></script>
+</body>
+</html>

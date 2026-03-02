@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Verify Code | Rahul Mishra - Premium Trading Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/login.css" />
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <!-- Trading-themed background elements -->
+    <div class="trading-bg-elements">
+      <div class="chart-line"></div>
+      <div class="candlestick"></div>
+      <div class="trading-icon">&#128272;</div>
+    </div>
+
+    <div class="auth-card">
+      <!-- Logo/Brand -->
+      <div class="brand-header">
+        <div class="brand-logo">
+          <span class="brand-name">Rahul Mishra</span>
+          <span class="brand-tagline">Trading Education</span>
+        </div>
+      </div>
+
+      <h1>Verify Your Code</h1>
+      <p class="subtitle">Enter the 6-digit verification code sent to your email</p>
+
+      <form id="otpForm">
+
+        <div class="input-group">
+          <input type="text" id="otp" maxlength="6" required />
+          <label>Verification Code</label>
+          <span class="icon">&#128272;</span>
+        </div>
+
+        <button type="submit" id="verifyBtn">
+          <span class="btn-text">Verify &amp; Continue</span>
+          <span class="btn-icon">&#8594;</span>
+        </button>
+        <div id="otpLoading" class="loading-text hidden">Verifying code...</div>
+
+      </form>
+
+      <div class="footer-text">
+        Didn&#8217;t receive the code?
+        <a href="login.html">Resend Code</a>
+      </div>
+
+      <!-- Trust indicators -->
+      <div class="trust-indicators">
+        <div class="trust-item">
+          <span class="trust-icon">&#128274;</span>
+          <span>Secure Verification</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">&#9889;</span>
+          <span>Instant Access</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../assets/js/supabase.js"></script>
+
+  <!-- OTP logic -->
+  <script src="../assets/js/verify-otp.js"></script>
+
+  <script src="../assets/js/cookie-consent.js"></script>
+</body>
+</html>
