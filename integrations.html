@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ArogyaX integrations — REST API, SDK, web and mobile consultation, and embedded systems for healthcare platforms." />
+  <title>Integrations — ArogyaX</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300B5A4'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='white' font-family='sans-serif'>Ax</text></svg>" />
+  <style>
+    .int-tier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    .partner-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .partner-chip {
+      background: var(--gray-100);
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text-mid);
+    }
+    .flow-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+    .flow-box {
+      background: var(--white);
+      border: 1.5px solid var(--gray-100);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .flow-arrow {
+      padding: 0 12px;
+      color: var(--teal);
+      font-size: 1.2rem;
+    }
+    @media (max-width: 768px) {
+      .int-tier-grid { grid-template-columns: 1fr; }
+      .flow-row { flex-direction: column; align-items: flex-start; }
+      .flow-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">Ax</div>
+        ArogyaX
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="booths.html">Booths</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary">Request Demo</a>
+        <button class="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="booths.html">Booths</a>
+      <a href="integrations.html">Integrations</a>
+      <a href="security.html">Security</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Request Demo</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-content">
+          <div class="section-label" style="color: var(--teal-light)">Integrations</div>
+          <h1>ArogyaX Powers the Platforms You Already Use</h1>
+          <p>Beyond booths and web consoles — ArogyaX can be embedded into external hospital management systems, partner apps, and government portals through a clean REST API and modular SDK.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTEGRATION OVERVIEW ── -->
+    <section class="section" aria-label="Integration overview">
+      <div class="container">
+        <div class="section-header center fade-up">
+          <div class="section-label">How Integration Works</div>
+          <h2>Four Ways to Connect with ArogyaX</h2>
+          <p>Whether you're embedding ArogyaX into an existing product or building a new deployment, there's a fit.</p>
+        </div>
+
+        <div class="int-tier-grid fade-up">
+
+          <!-- Web Integration -->
+          <div class="integration-tier">
+            <div class="tier-badge">Web</div>
+            <h3>Web Console Integration</h3>
+            <p>Use ArogyaX as a standalone web application or embed the consultation flow directly within your existing web portal. No additional development required.</p>
+            <ul class="check-list" style="margin-top: 20px;">
+              <li>Hosted on your subdomain or ours</li>
+              <li>Branded to your institution</li>
+              <li>Works on all modern browsers</li>
+              <li>Responsive for tablet use at the doctor's desk</li>
+            </ul>
+            <div class="flow-row" style="margin-top: 24px;">
+              <div class="flow-box">Your Website</div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-box">ArogyaX iFrame / Redirect</div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-box">Consultation Session</div>
+            </div>
+          </div>
+
+          <!-- Mobile -->
+          <div class="integration-tier">
+            <div class="tier-badge">Mobile</div>
+            <h3>Mobile App Deployment</h3>
+            <p>ArogyaX runs natively on Android and iOS devices. Institutions can use the ArogyaX app directly, or embed consultation functionality into their own mobile application.</p>
+            <ul class="check-list" style="margin-top: 20px;">
+              <li>White-label mobile app available</li>
+              <li>Available on Android (primary); iOS on request</li>
+              <li>Offline session caching for low-connectivity areas</li>
+              <li>Push notifications for appointment and prescription updates</li>
+            </ul>
+            <div class="flow-row" style="margin-top: 24px;">
+              <div class="flow-box">Your App</div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-box">ArogyaX SDK Module</div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-box">Doctor Queue</div>
+            </div>
+          </div>
+
+          <!-- API -->
+          <div class="integration-tier">
+            <div class="tier-badge">API</div>
+            <h3>REST API Integration</h3>
+            <p>The ArogyaX REST API gives full programmatic control over consultation lifecycle — from patient registration through prescription retrieval. Build exactly the experience your product needs.</p>
+            <ul class="check-list" style="margin-top: 20px;">
+              <li>Token-authenticated, tenant-scoped endpoints</li>
+              <li>Webhooks for real-time session event notifications</li>
+              <li>Pagination and filtering for patient record queries</li>
+              <li>Sandbox environment available for development</li>
+            </ul>
+            <div class="code-block">
+<span class="kw">POST</span> /v1/consultations<br>
+Authorization: Bearer <span class="str">{api_key}</span><br>
+X-Tenant-ID: <span class="str">{org_id}</span><br><br>
+{<br>
+&nbsp;&nbsp;<span class="str">"patient_id"</span>: <span class="str">"pt_a1b2c3"</span>,<br>
+&nbsp;&nbsp;<span class="str">"vitals"</span>: { <span class="str">"bp"</span>: <span class="str">"120/80"</span>, <span class="str">"spo2"</span>: <span class="str">"98"</span> },<br>
+&nbsp;&nbsp;<span class="str">"chief_complaint"</span>: <span class="str">"Persistent cough"</span><br>
+}<br>
+<span class="cmt">// → 201 Created: consultation_id, queue_position</span>
+            </div>
+          </div>
+
+          <!-- SDK -->
+          <div class="integration-tier">
+            <div class="tier-badge">SDK</div>
+            <h3>Embedded SDK / Kiosk Mode</h3>
+            <p>The ArogyaX SDK is designed for embedding the full consultation experience into hardware systems, partner kiosks, or custom-built interfaces — beyond just web and mobile.</p>
+            <ul class="check-list" style="margin-top: 20px;">
+              <li>JavaScript SDK for browser-embedded deployments</li>
+              <li>Native Android library for device integrations</li>
+              <li>Event-based architecture for custom UI orchestration</li>
+              <li>Suitable for hardware OEMs adding health features to existing devices</li>
+            </ul>
+            <div class="code-block">
+<span class="kw">import</span> ArogyaX <span class="kw">from</span> <span class="str">'@arogyax/sdk'</span>;<br><br>
+<span class="kw">const</span> ax = <span class="kw">new</span> ArogyaX({<br>
+&nbsp;&nbsp;tenantId: <span class="str">'your_org_id'</span>,<br>
+&nbsp;&nbsp;mode: <span class="str">'kiosk'</span>,<br>
+&nbsp;&nbsp;otpEnabled: <span class="kw">false</span><br>
+});<br><br>
+ax.startConsultation(); <span class="cmt">// launches the flow</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT YOU CAN BUILD ── -->
+    <section class="section section--gray" aria-label="What you can build">
+      <div class="container">
+        <div class="section-header center fade-up">
+          <div class="section-label">What You Can Build</div>
+          <h2>ArogyaX as a Healthcare Backend for Your Product</h2>
+          <p>If you're a health-tech company, hospital software vendor, or enterprise platform — you can use ArogyaX as the consultation infrastructure layer, and build your own experience on top.</p>
+        </div>
+        <div class="grid-3 fade-up">
+          <div class="card">
+            <div class="card-icon">🏥</div>
+            <h4>HMS Add-On</h4>
+            <p>Add telemedicine and booth-powered consultation capability to an existing hospital management system without rebuilding your stack.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💊</div>
+            <h4>Pharmacy Consultation Layer</h4>
+            <p>Pharmacy apps can offer over-the-counter doctor advice before medication dispensing, powered by the ArogyaX consultation flow.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🏛️</div>
+            <h4>Government Health Portal</h4>
+            <p>State and central health portals can use ArogyaX as the backend for citizen consultation services — fully configurable for public sector compliance.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">📱</div>
+            <h4>Patient-Facing App</h4>
+            <p>Consumer health apps can embed ArogyaX consultation flows via SDK, offering users access to verified doctors without building the workflow themselves.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔬</div>
+            <h4>Diagnostics Integration</h4>
+            <p>Labs and diagnostics chains can connect ArogyaX so doctors can order tests from within the consultation, with results flowing back into the platform.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🤝</div>
+            <h4>Insurance Platform</h4>
+            <p>Health insurers can integrate ArogyaX to offer policyholders structured teleconsultation as a covered benefit, with usage data for claims processing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── API DETAILS ── -->
+    <section class="section section--dark" aria-label="API details">
+      <div class="container">
+        <div class="section-header center fade-up">
+          <div class="section-label" style="color: var(--teal-light)">API Reference</div>
+          <h2>Designed for Developers Who Value Simplicity</h2>
+          <p>The ArogyaX API follows REST conventions, uses JWT authentication, and returns structured JSON. Integration time is typically 1–3 days for a working prototype.</p>
+        </div>
+        <div class="grid-2 fade-up">
+          <div>
+            <h4 style="color: var(--teal-light); margin-bottom: 16px;">Core Endpoints</h4>
+            <div class="code-block">
+<span class="cmt"># Patient Management</span><br>
+<span class="kw">GET</span>    /v1/patients<br>
+<span class="kw">POST</span>   /v1/patients<br>
+<span class="kw">GET</span>    /v1/patients/<span class="str">{id}</span><br><br>
+<span class="cmt"># Consultations</span><br>
+<span class="kw">POST</span>   /v1/consultations<br>
+<span class="kw">GET</span>    /v1/consultations/<span class="str">{id}</span><br>
+<span class="kw">GET</span>    /v1/consultations/<span class="str">{id}</span>/prescription<br><br>
+<span class="cmt"># Doctor Queue</span><br>
+<span class="kw">GET</span>    /v1/queue/status<br>
+<span class="kw">POST</span>   /v1/queue/assign
+            </div>
+          </div>
+          <div>
+            <h4 style="color: var(--teal-light); margin-bottom: 16px;">Webhook Events</h4>
+            <div class="code-block">
+<span class="cmt"># Events your system receives</span><br>
+consultation.created<br>
+consultation.assigned<br>
+consultation.completed<br>
+prescription.generated<br>
+patient.registered<br>
+session.timeout<br><br>
+<span class="cmt"># Example payload</span><br>
+{<br>
+&nbsp;&nbsp;<span class="str">"event"</span>: <span class="str">"consultation.completed"</span>,<br>
+&nbsp;&nbsp;<span class="str">"consultation_id"</span>: <span class="str">"cns_xyz"</span>,<br>
+&nbsp;&nbsp;<span class="str">"doctor_id"</span>: <span class="str">"dr_abc"</span>,<br>
+&nbsp;&nbsp;<span class="str">"timestamp"</span>: <span class="str">"2025-04-12T14:32:00Z"</span><br>
+}
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 48px;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get API Access</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Start Building on ArogyaX</h2>
+        <p>Whether you need a simple web deployment or a deep API integration, we'll help you get connected.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">Request API Access</a>
+          <a href="security.html" class="btn btn-outline-white btn-lg">View Security</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-mark">Ax</div>
+            ArogyaX
+          </a>
+          <p>Healthcare consultation infrastructure for modern institutions. Powering booths, web, mobile, and API-driven health workflows.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <ul>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="booths.html">Health Booths</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Request Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:nextgenbuild.dev@gmail.com">nextgenbuild.dev@gmail.com</a></li>
+            <li><a href="tel:+918287034496">+91 82870 34496</a></li>
+            <li><span style="color:var(--gray-500); font-size:.85rem;">A94 Dass Garden, Baprola<br>Delhi — 110043</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 ArogyaX. All rights reserved.</span>
+        <span>Built by Rahul Mishra · NextGenBuild</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

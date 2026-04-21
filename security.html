@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ArogyaX security architecture — consent-based access, audit logs, tenant isolation, role-based control, and secure prescription delivery." />
+  <title>Security — ArogyaX</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300B5A4'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='white' font-family='sans-serif'>Ax</text></svg>" />
+  <style>
+    .security-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .security-graphic {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+      border-radius: var(--radius-xl);
+      padding: 52px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .security-graphic::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(0,181,164,.2) 0%, transparent 70%);
+    }
+    .sec-layer {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .sec-layer-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+      box-shadow: 0 0 8px var(--teal);
+    }
+    .sec-layer span { font-size: .85rem; color: var(--gray-300); }
+    .sec-layer strong { color: var(--white); }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .audit-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100);
+    }
+    .audit-table th {
+      background: var(--navy);
+      color: var(--white);
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: 14px 20px;
+      text-align: left;
+    }
+    .audit-table td {
+      padding: 14px 20px;
+      font-size: .88rem;
+      color: var(--text-mid);
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .audit-table tr:last-child td { border-bottom: none; }
+    .audit-table tr:hover td { background: var(--off-white); }
+    .badge-ok {
+      display: inline-block;
+      background: #d1fae5;
+      color: #065f46;
+      font-size: .75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    @media (max-width: 900px) {
+      .security-intro { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">Ax</div>
+        ArogyaX
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="booths.html">Booths</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary">Request Demo</a>
+        <button class="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="booths.html">Booths</a>
+      <a href="integrations.html">Integrations</a>
+      <a href="security.html">Security</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Request Demo</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-content">
+          <div class="section-label" style="color: var(--teal-light)">Security</div>
+          <h1>Designed for Patient Data Responsibility</h1>
+          <p>Healthcare data is sensitive by nature. ArogyaX is built with that responsibility at its core — not through checkbox compliance, but through deliberate architectural decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── INTRO ── -->
+    <section class="section" aria-label="Security overview">
+      <div class="container">
+        <div class="security-intro fade-up">
+          <div>
+            <div class="section-label">Our Approach</div>
+            <h2>Security is Architecture, Not an Add-On</h2>
+            <p style="margin-top: 16px;">Many platforms treat security as a compliance layer — something applied after the product is built. ArogyaX takes a different approach: data governance decisions shape how the platform is designed from the ground up.</p>
+            <p style="margin-top: 16px;">Every access to patient data requires a valid session, a verified role, and — where applicable — explicit patient consent. There is no "god mode" account that can view all patient records across all tenants.</p>
+            <p style="margin-top: 16px;">This isn't just a technical choice. It reflects how we believe healthcare infrastructure should behave.</p>
+          </div>
+          <div class="security-graphic">
+            <div class="sec-layer">
+              <div class="sec-layer-dot"></div>
+              <div><strong>Patient Layer</strong><br><span>Consent-gated access · OTP verification</span></div>
+            </div>
+            <div class="sec-layer">
+              <div class="sec-layer-dot"></div>
+              <div><strong>Session Layer</strong><br><span>JWT tokens · expiry controls · device binding</span></div>
+            </div>
+            <div class="sec-layer">
+              <div class="sec-layer-dot"></div>
+              <div><strong>Role Layer</strong><br><span>RBAC · doctor / admin / staff roles</span></div>
+            </div>
+            <div class="sec-layer">
+              <div class="sec-layer-dot"></div>
+              <div><strong>Tenant Layer</strong><br><span>Full data isolation · no cross-tenant queries</span></div>
+            </div>
+            <div class="sec-layer">
+              <div class="sec-layer-dot"></div>
+              <div><strong>Infrastructure Layer</strong><br><span>Encrypted at rest and in transit · cloud-native</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PILLARS ── -->
+    <section class="section section--gray" aria-label="Security pillars">
+      <div class="container">
+        <div class="section-header center fade-up">
+          <div class="section-label">Security Pillars</div>
+          <h2>Six Practices That Define How ArogyaX Handles Data</h2>
+        </div>
+        <div class="pillars-grid fade-up">
+
+          <div class="security-pillar">
+            <div class="card-icon">✅</div>
+            <h3>Consent-Based Data Access</h3>
+            <p>No patient data is accessed without an active, system-recorded consent event. Whether through OTP verification or explicit digital consent, every record access is traceable to a user action.</p>
+            <p style="margin-top: 12px;">This is relevant for institutions operating under data protection regulations — ArogyaX generates and stores consent records that can be produced for audit purposes.</p>
+          </div>
+
+          <div class="security-pillar">
+            <div class="card-icon">📋</div>
+            <h3>Comprehensive Audit Logs</h3>
+            <p>Every significant action in the system generates an immutable audit log entry. Who accessed what, when, from which session, and with what outcome — all captured automatically.</p>
+            <p style="margin-top: 12px;">Logs are accessible to institution admins for their own tenant data. They cannot be modified or deleted by any user, including administrators.</p>
+          </div>
+
+          <div class="security-pillar">
+            <div class="card-icon">🏛️</div>
+            <h3>Tenant Isolation</h3>
+            <p>ArogyaX serves multiple institutions on the same infrastructure, but each institution's data is logically isolated. Hospital A cannot query or observe Hospital B's patient records under any condition.</p>
+            <p style="margin-top: 12px;">Tenant boundaries are enforced at the database query level, not through application logic — meaning there is no code path that accidentally exposes cross-tenant data.</p>
+          </div>
+
+          <div class="security-pillar">
+            <div class="card-icon">👥</div>
+            <h3>Role-Based Access Control</h3>
+            <p>ArogyaX supports distinct roles: patient, receptionist, doctor, department admin, and organisation admin. Each role has precisely defined permissions and cannot escalate without administrator action.</p>
+            <p style="margin-top: 12px;">A receptionist can register a patient but cannot view prescriptions. A doctor can access only their assigned consultation records. This prevents horizontal privilege misuse.</p>
+          </div>
+
+          <div class="security-pillar">
+            <div class="card-icon">👤</div>
+            <h3>Guest Session Control</h3>
+            <p>When guest mode is enabled, sessions are ephemeral — they exist for the duration of the consultation and the immediately generated output (prescription PDF), after which they are not associated with any persistent identity.</p>
+            <p style="margin-top: 12px;">Aggregate usage data is retained for institutional reporting, but individual session data is not linked to identifiable personal information in guest mode.</p>
+          </div>
+
+          <div class="security-pillar">
+            <div class="card-icon">📄</div>
+            <h3>Secure Prescription Access</h3>
+            <p>Prescription PDFs are generated and stored with access-controlled URLs. Each prescription link is tied to the originating session or patient record — it cannot be shared as an open public link.</p>
+            <p style="margin-top: 12px;">Links expire after a configured duration. Doctors and administrators can regenerate access for a patient, but this action is logged. Prescriptions are never emailed as unprotected attachments by default.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── AUDIT LOG EXAMPLE ── -->
+    <section class="section" aria-label="Audit log example">
+      <div class="container">
+        <div class="section-header center fade-up">
+          <div class="section-label">Audit Logs</div>
+          <h2>Every Action, Traceable and Timestamped</h2>
+          <p>The audit log is always on. Institution admins can filter, export, and review logs within their tenant dashboard at any time.</p>
+        </div>
+        <div class="fade-up" style="overflow-x: auto;">
+          <table class="audit-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Actor</th>
+                <th>Role</th>
+                <th>Action</th>
+                <th>Resource</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2025-04-12 09:14:02</td>
+                <td>dr.sharma@hospital.in</td>
+                <td>Doctor</td>
+                <td>VIEW_CONSULTATION</td>
+                <td>cns_a7b2c3</td>
+                <td><span class="badge-ok">Authorised</span></td>
+              </tr>
+              <tr>
+                <td>2025-04-12 09:16:45</td>
+                <td>dr.sharma@hospital.in</td>
+                <td>Doctor</td>
+                <td>GENERATE_PRESCRIPTION</td>
+                <td>cns_a7b2c3</td>
+                <td><span class="badge-ok">Authorised</span></td>
+              </tr>
+              <tr>
+                <td>2025-04-12 09:18:10</td>
+                <td>reception_01</td>
+                <td>Receptionist</td>
+                <td>REGISTER_PATIENT</td>
+                <td>pt_new_8810</td>
+                <td><span class="badge-ok">Authorised</span></td>
+              </tr>
+              <tr>
+                <td>2025-04-12 09:22:33</td>
+                <td>reception_01</td>
+                <td>Receptionist</td>
+                <td>VIEW_PRESCRIPTION</td>
+                <td>rx_cns_a7b2c3</td>
+                <td style="color: #dc2626; font-weight: 600;">Denied — Insufficient Role</td>
+              </tr>
+              <tr>
+                <td>2025-04-12 09:45:00</td>
+                <td>admin@hospital.in</td>
+                <td>Org Admin</td>
+                <td>EXPORT_AUDIT_LOG</td>
+                <td>tenant_logs_2025-04</td>
+                <td><span class="badge-ok">Authorised</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 16px; font-size: .85rem; text-align: center; color: var(--text-light);">Sample log entries for illustration. Actual log format and fields are configurable per institution.</p>
+      </div>
+    </section>
+
+    <!-- ── TRANSMISSION AND STORAGE ── -->
+    <section class="section section--gray" aria-label="Data handling">
+      <div class="container">
+        <div class="section-header center fade-up">
+          <div class="section-label">Data Handling</div>
+          <h2>How Patient Data is Stored and Transmitted</h2>
+        </div>
+        <div class="grid-3 fade-up">
+          <div class="card">
+            <div class="card-icon">🔒</div>
+            <h4>Encryption in Transit</h4>
+            <p>All communication between the patient interface, the ArogyaX platform, and the doctor console uses TLS 1.2 or higher. No unencrypted data traverses the network at any point in the workflow.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">💾</div>
+            <h4>Encryption at Rest</h4>
+            <p>Patient records, consultation logs, and prescription documents are stored with AES-256 encryption. Encryption keys are managed separately from the data store.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon">🗂️</div>
+            <h4>Data Residency</h4>
+            <p>By default, all data is stored within India on cloud infrastructure that complies with domestic data residency requirements. Regional data residency options are available for enterprise deployments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Have Security or Compliance Questions?</h2>
+        <p>We're happy to share detailed technical documentation, answer specific compliance questions, or conduct a security architecture review with your IT or legal team.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">Contact Our Team</a>
+          <a href="integrations.html" class="btn btn-outline-white btn-lg">View Integrations</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-mark">Ax</div>
+            ArogyaX
+          </a>
+          <p>Healthcare consultation infrastructure for modern institutions. Powering booths, web, mobile, and API-driven health workflows.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <ul>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="booths.html">Health Booths</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Request Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:nextgenbuild.dev@gmail.com">nextgenbuild.dev@gmail.com</a></li>
+            <li><a href="tel:+918287034496">+91 82870 34496</a></li>
+            <li><span style="color:var(--gray-500); font-size:.85rem;">A94 Dass Garden, Baprola<br>Delhi — 110043</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 ArogyaX. All rights reserved.</span>
+        <span>Built by Rahul Mishra · NextGenBuild</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

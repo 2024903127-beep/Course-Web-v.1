@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact ArogyaX — request a demo, discuss a deployment, or ask about integrations and partnerships." />
+  <title>Contact — ArogyaX</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2300B5A4'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' font-size='18' font-weight='bold' fill='white' font-family='sans-serif'>Ax</text></svg>" />
+  <style>
+    .contact-section {
+      padding: 96px 0;
+    }
+    .reach-chips {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .reach-chip {
+      background: var(--teal-pale);
+      color: var(--teal);
+      font-size: .82rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(0,181,164,.2);
+    }
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .form-note {
+      font-size: .8rem;
+      color: var(--text-light);
+    }
+    @media (max-width: 600px) {
+      .form-submit-row { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-mark">Ax</div>
+        ArogyaX
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solutions.html">Solutions</a></li>
+        <li><a href="booths.html">Booths</a></li>
+        <li><a href="integrations.html">Integrations</a></li>
+        <li><a href="security.html">Security</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="contact.html" class="btn btn-primary">Request Demo</a>
+        <button class="nav-hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="booths.html">Booths</a>
+      <a href="integrations.html">Integrations</a>
+      <a href="security.html">Security</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Request Demo</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HERO ── -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-content">
+          <div class="section-label" style="color: var(--teal-light)">Get in Touch</div>
+          <h1>Let's Discuss Your Institution's Needs</h1>
+          <p>Whether you're exploring ArogyaX for the first time or ready to discuss a deployment — reach out and our team will get back to you within one business day.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT MAIN ── -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Left: Info -->
+          <div class="fade-up">
+            <div class="section-label">Contact</div>
+            <h2>We're Here to Help You Deploy</h2>
+            <p style="margin-top: 16px;">The ArogyaX team works directly with institutions to understand their specific requirements. No automated sales funnels — you'll talk to someone who understands healthcare infrastructure.</p>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📧</div>
+              <div class="contact-detail-text">
+                <strong>Email</strong>
+                <a href="mailto:nextgenbuild.dev@gmail.com" style="color: var(--teal); font-size:.9rem;">nextgenbuild.dev@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📞</div>
+              <div class="contact-detail-text">
+                <strong>Phone</strong>
+                <a href="tel:+918287034496" style="color: var(--teal); font-size:.9rem;">+91 82870 34496</a>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">📍</div>
+              <div class="contact-detail-text">
+                <strong>Address</strong>
+                <span>A94 Dass Garden, Baprola<br>Delhi — 110043, India</span>
+              </div>
+            </div>
+
+            <div class="contact-detail">
+              <div class="contact-detail-icon">👤</div>
+              <div class="contact-detail-text">
+                <strong>Point of Contact</strong>
+                <span>Rahul Mishra · Founder, NextGenBuild</span>
+              </div>
+            </div>
+
+            <div class="reach-chips">
+              <span class="reach-chip">🏥 Hospital Deployments</span>
+              <span class="reach-chip">🎓 School Health Programs</span>
+              <span class="reach-chip">🏢 Corporate Wellness</span>
+              <span class="reach-chip">🔌 API Integrations</span>
+              <span class="reach-chip">🖥️ Booth Installations</span>
+              <span class="reach-chip">🤝 Partnerships</span>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="fade-up">
+            <div class="contact-form" id="form-wrap">
+              <h3 style="margin-bottom: 8px;">Request a Demo or Enquiry</h3>
+              <p style="font-size: .9rem; margin-bottom: 28px;">Fill in the details below and our team will reach out to schedule a walkthrough.</p>
+
+              <form id="contact-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" placeholder="Rahul Mishra" autocomplete="name" />
+                    <div class="error-msg"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="org">Organisation *</label>
+                    <input type="text" id="org" placeholder="City Hospital, IIT Delhi…" autocomplete="organization" />
+                    <div class="error-msg"></div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="you@yourinstitution.in" autocomplete="email" />
+                    <div class="error-msg"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+                    <div class="error-msg"></div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="org-type">Organisation Type *</label>
+                  <select id="org-type">
+                    <option value="">Select your institution type…</option>
+                    <option value="hospital">Hospital</option>
+                    <option value="clinic">Clinic / Polyclinic</option>
+                    <option value="school">School / University</option>
+                    <option value="corporate">Corporate / Employer</option>
+                    <option value="govt">Government / Public Health</option>
+                    <option value="ngo">NGO / Trust</option>
+                    <option value="pharmacy">Pharmacy / Diagnostics</option>
+                    <option value="tech">Health-Tech / Software Company</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <div class="error-msg"></div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message *</label>
+                  <textarea id="message" placeholder="Tell us about your deployment goals, approximate scale, and any specific questions you have…"></textarea>
+                  <div class="error-msg"></div>
+                </div>
+                <div class="form-submit-row">
+                  <button type="submit" class="btn btn-primary btn-lg">Send Enquiry</button>
+                  <span class="form-note">We respond within 1 business day.</span>
+                </div>
+              </form>
+            </div>
+
+            <!-- Success State -->
+            <div class="contact-form form-success" id="form-success">
+              <div class="form-success-icon">✅</div>
+              <h3>Message Sent!</h3>
+              <p style="margin-top: 12px;">Thank you for reaching out. Our team will review your enquiry and get back to you within one business day.</p>
+              <p style="margin-top: 8px; font-size: .9rem;">If you have an urgent requirement, call us directly at <a href="tel:+918287034496" style="color: var(--teal); font-weight: 600;">+91 82870 34496</a>.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT TO EXPECT ── -->
+    <section class="section section--gray" aria-label="What to expect">
+      <div class="container">
+        <div class="section-header center fade-up">
+          <div class="section-label">What Happens Next</div>
+          <h2>Our Onboarding Process</h2>
+        </div>
+        <div class="grid-4 fade-up">
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 16px;">💬</div>
+            <h4>Initial Call</h4>
+            <p style="font-size:.88rem;">We schedule a 30-minute discovery call to understand your institution's requirements and answer initial questions.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 16px;">🖥️</div>
+            <h4>Platform Demo</h4>
+            <p style="font-size:.88rem;">We walk through a live demo of ArogyaX configured to a use case similar to yours — booth, web, or API.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 16px;">📋</div>
+            <h4>Proposal</h4>
+            <p style="font-size:.88rem;">We provide a deployment proposal, including scope, configuration options, and commercial terms tailored to your institution.</p>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div style="font-size: 2rem; margin-bottom: 16px;">🚀</div>
+            <h4>Go Live</h4>
+            <p style="font-size:.88rem;">Our team manages setup and onboarding. Most deployments go live within two weeks of agreement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-mark">Ax</div>
+            ArogyaX
+          </a>
+          <p>Healthcare consultation infrastructure for modern institutions. Powering booths, web, mobile, and API-driven health workflows.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <ul>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="booths.html">Health Booths</a></li>
+            <li><a href="integrations.html">Integrations</a></li>
+            <li><a href="security.html">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html">Request Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="mailto:nextgenbuild.dev@gmail.com">nextgenbuild.dev@gmail.com</a></li>
+            <li><a href="tel:+918287034496">+91 82870 34496</a></li>
+            <li><span style="color:var(--gray-500); font-size:.85rem;">A94 Dass Garden, Baprola<br>Delhi — 110043</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 ArogyaX. All rights reserved.</span>
+        <span>Built by Rahul Mishra · NextGenBuild</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
